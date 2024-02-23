@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+          }
+          #uNameInput {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #376498;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+          }
+    </style>
+</head>
+<body>
+    
+    <input id="uNameInput" type="text" placeholder="username" required>
+            
+    <input onclick="generate()" id="gen-button" type="button" value="Who will pay"</input>
+
+    <script>
+         var nameList = ['hima will pay','taru will pay','arp will pay','contro'];
+         var finalName;
+        
+            function generate() {
+               var finalName = nameList[Math.floor( Math.random() * nameList.length )];
+               document.getElementById("uNameInput").value = finalName;
+            };
+    </script>
+</body>
+</html>

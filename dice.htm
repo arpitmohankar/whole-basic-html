@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <style>
+        h1,h2{
+            text-align: center;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dice{
+            margin:3rem;
+        }
+        input{
+            padding:5px;
+            border-radius: 5px;
+            margin-left:50%;
+        }
+        .target1{
+            height:100vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Game!</h1>
+    <div class="container">
+        <div class="dice">
+            <img id="dice_img1" src="./images/dice_1.png" alt="Dice Image">
+            <h2>Player 1</h2>
+        </div>
+        <div class="dice">
+            <img id="dice_img2" src="./images/dice_2.png" alt="Dice Image">
+            <h2>Player 2</h2>
+        </div>
+    </div>
+    <input type="button" value="Reload Page">
+    <div class="target1">
+
+    </div>
+    <script>
+        var val1=Math.floor(Math.random()*6)+1;
+        var val2=Math.floor(Math.random()*6)+1;
+        var attri1="./images/dice_"+val1+".png";
+        document.querySelector("#dice_img1").setAttribute("src", attri1);
+        var attri2="./images/dice_"+val2+".png";
+        document.querySelector("#dice_img2").setAttribute("src", attri2);
+        var target=document.querySelector("h1");
+        if(val1>val2){
+            target.textContent="Player 1 Wins!!!";
+        }
+        else if(val2>val1){
+            target.textContent="Player 2 Wins!!!";
+        }
+        else{
+            target.textContent="It's a draw!";
+        }
+        document.querySelector("input").addEventListener("click", ()=>{
+            document.location.reload("true");
+        });
+    </script>
+</body>
+</html>
